@@ -1,0 +1,156 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--shell);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.22, 0.7, 0.2, 1), box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(45, 38, 33, 0.18);
+}
+
+.product-card__media {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 1.4rem 1rem 0.6rem;
+  background: linear-gradient(168deg, #f8f1e7 0%, #ecdfcd 100%);
+  overflow: hidden;
+}
+
+.product-card__halo {
+  position: absolute;
+  width: 138px;
+  height: 138px;
+  border-radius: 50%;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0));
+}
+
+.product-card__art {
+  position: relative;
+  width: clamp(96px, 40%, 132px);
+  height: auto;
+  transition: transform 0.4s cubic-bezier(0.22, 0.7, 0.2, 1);
+}
+
+.product-card:hover .product-card__art {
+  transform: translateY(-4px) scale(1.03);
+}
+
+.product-card__badge,
+.product-card__off {
+  position: absolute;
+  top: 0.85rem;
+  padding: 0.28rem 0.65rem;
+  border-radius: var(--r-pill);
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.product-card__badge {
+  inset-inline-start: 0.85rem;
+  background: var(--ink);
+  color: var(--cream-soft);
+}
+
+.product-card__off {
+  inset-inline-end: 0.85rem;
+  background: rgba(255, 251, 246, 0.9);
+  color: var(--clay);
+  border: 1px solid rgba(168, 102, 74, 0.3);
+}
+
+.product-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1rem 1.1rem 1.2rem;
+  flex: 1;
+}
+
+.product-card__brand {
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  color: var(--ink-faint);
+}
+
+.product-card__name {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.product-card__name a:hover {
+  color: var(--clay);
+}
+
+.product-card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 0.7rem;
+  border-top: 1px dashed var(--line);
+}
+
+.product-card__price {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.product-card__price s {
+  font-size: 0.74rem;
+  font-weight: 400;
+  color: var(--ink-faint);
+  text-decoration-thickness: 1px;
+}
+
+.product-card__add {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: var(--r-pill);
+  background: var(--ink);
+  color: var(--cream-soft);
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.product-card__add:hover {
+  background: var(--clay);
+  transform: translateY(-2px);
+}
+
+/* روی دستگاه‌های ماوس‌دار، دکمه افزودن با هاور ظاهر می‌شود */
+@media (hover: hover) and (min-width: 700px) {
+  .product-card__add {
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+  }
+
+  .product-card:hover .product-card__add,
+  .product-card:focus-within .product-card__add {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+}

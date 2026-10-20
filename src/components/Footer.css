@@ -1,0 +1,120 @@
+.footer {
+  margin-top: clamp(2rem, 6vw, 4rem);
+  padding-top: clamp(2.6rem, 6vw, 4rem);
+  background: linear-gradient(180deg, rgba(223, 203, 182, 0) 0%, rgba(223, 203, 182, 0.5) 100%);
+  border-top: 1px solid var(--line);
+}
+
+.footer__grid {
+  display: grid;
+  gap: clamp(1.8rem, 4vw, 3rem);
+  grid-template-columns: 1fr;
+  padding-bottom: 2.5rem;
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+}
+
+.footer__brand-fa {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.footer__brand-latin {
+  font-size: 0.58rem;
+  letter-spacing: 0.34em;
+  color: var(--clay);
+  font-weight: 700;
+}
+
+.footer__text {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 2;
+  max-width: 34ch;
+}
+
+.footer__head {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+.footer__list {
+  display: grid;
+  gap: 0.55rem;
+  font-size: 0.9rem;
+}
+
+.footer__link {
+  color: var(--ink-soft);
+  transition: color 0.2s ease;
+}
+
+.footer__link:hover {
+  color: var(--clay);
+}
+
+.footer__list--contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  color: var(--ink-soft);
+  line-height: 1.9;
+}
+
+.footer__list--contact .icon {
+  flex-shrink: 0;
+  margin-top: 0.42rem;
+  color: var(--clay);
+}
+
+.footer__social {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.footer__social-link:hover {
+  background: var(--ink);
+  color: var(--cream-soft);
+  transform: translateY(-2px);
+}
+
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding-block: 1.3rem;
+  border-top: 1px solid var(--line);
+  font-size: var(--step-micro);
+  color: var(--ink-faint);
+}
+
+.footer__promise {
+  color: var(--ink-soft);
+}
+
+@media (min-width: 700px) {
+  .footer__grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  }
+}

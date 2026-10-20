@@ -1,0 +1,299 @@
+.hero {
+  padding-top: clamp(1.2rem, 3vw, 2.2rem);
+  padding-bottom: clamp(3rem, 11vw, 8rem);
+}
+
+/* پس‌زمینه استودیویی: نه تخت، نه براق — فقط نور نرم و لبه‌های گرد */
+.hero__studio {
+  position: relative;
+  border-radius: clamp(30px, 5vw, 68px);
+  padding: clamp(1.7rem, 4.4vw, 3.6rem);
+  display: grid;
+  gap: clamp(1.6rem, 4vw, 2.6rem);
+}
+
+.hero__studio::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(120% 90% at 82% 6%, rgba(255, 253, 249, 0.95) 0%, rgba(255, 253, 249, 0) 58%),
+    radial-gradient(80% 70% at 8% 104%, rgba(198, 168, 142, 0.55) 0%, rgba(198, 168, 142, 0) 62%),
+    linear-gradient(158deg, #f7eee4 0%, #ead9c6 62%, #ddc8ae 100%);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.75),
+    inset 0 -50px 90px -60px rgba(120, 90, 65, 0.6),
+    var(--shadow-lg);
+}
+
+.hero__studio > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__side {
+  position: absolute;
+  inset-inline-start: clamp(0.4rem, 1.6vw, 1.1rem);
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  color: rgba(45, 38, 33, 0.5);
+  z-index: 2;
+}
+
+/* ------------------------------------------------------------ متن هیرو -- */
+.hero__type {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 34rem;
+}
+
+.hero__title {
+  font-size: var(--step-display);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__title-em {
+  font-weight: 400;
+  color: var(--clay);
+  padding-inline-start: 0.12em;
+}
+
+.hero__lead {
+  font-size: var(--step-lead);
+  line-height: 2;
+  color: var(--ink-soft);
+  max-width: 44ch;
+}
+
+.hero__feature {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.6rem 1.4rem;
+  padding-top: 0.4rem;
+}
+
+.hero__feature-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.hero__feature-brand {
+  font-size: 0.6rem;
+  letter-spacing: 0.34em;
+  color: var(--ink-soft);
+}
+
+/* لاتین خط‌دور — امضای بصری زمان‌یار */
+.hero__feature-line {
+  font-size: clamp(2rem, 5.6vw, 3.6rem);
+  -webkit-text-stroke-width: clamp(1.2px, 0.22vw, 2px);
+}
+
+.hero__feature-price {
+  font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+  font-weight: 600;
+  color: var(--clay);
+  padding-bottom: 0.35rem;
+}
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  padding-top: 0.8rem;
+}
+
+/* ----------------------------------------------------------- صحنه ساعت -- */
+.hero__stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: clamp(320px, 52vw, 520px);
+}
+
+.hero__ring {
+  position: absolute;
+  width: min(78%, 460px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px dashed rgba(45, 38, 33, 0.16);
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* واترمارک برند: عرض آن به عرض صحنه محدود می‌شود تا صفحه را به بیرون هل ندهد */
+.hero__word {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  text-align: center;
+  font-size: clamp(2rem, 6.8vw, 4.8rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  opacity: 0.32;
+  -webkit-text-stroke-color: var(--ink);
+  -webkit-text-stroke-width: 1.5px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.hero__watch {
+  position: relative;
+  z-index: 2;
+  width: clamp(190px, 34vw, 330px);
+  transform: translateY(clamp(6px, 2vw, 26px));
+  animation: hero-float 9s ease-in-out infinite;
+}
+
+.hero__watch svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 30px 40px rgba(95, 68, 48, 0.35));
+}
+
+.hero__shadow {
+  position: absolute;
+  bottom: -4%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 62%;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(97, 70, 50, 0.42), rgba(97, 70, 50, 0));
+  filter: blur(2px);
+}
+
+/* نسخه کوچک یک مدل دیگر — مثل قاب کنار ویترین */
+.hero__variant {
+  position: absolute;
+  bottom: 4%;
+  inset-inline-start: 2%;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.5rem 0.75rem 0.5rem 0.5rem;
+  border-radius: var(--r-lg);
+  border: 1px solid rgba(45, 38, 33, 0.16);
+  background: rgba(255, 252, 247, 0.72);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero__variant:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.hero__variant-art {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--r-md);
+  background: linear-gradient(160deg, #f4e9db, #e2cfb8);
+  overflow: hidden;
+}
+
+.hero__variant-art svg {
+  width: 34px;
+  height: auto;
+}
+
+.hero__variant-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+
+.hero__variant-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.hero__variant-price {
+  font-size: 0.72rem;
+  color: var(--clay);
+}
+
+/* ------------------------------------------------------------ نشانه اسکرول */
+.hero__cue {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero__cue-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--step-micro);
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+}
+
+.hero__cue-link .icon {
+  animation: hero-cue 2.4s ease-in-out infinite;
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(clamp(6px, 2vw, 26px));
+  }
+  50% {
+    transform: translateY(calc(clamp(6px, 2vw, 26px) - 12px));
+  }
+}
+
+@keyframes hero-cue {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+@media (min-width: 900px) {
+  .hero__studio {
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    padding-bottom: clamp(3rem, 8vw, 5.5rem);
+  }
+
+  .hero__stage {
+    min-height: clamp(420px, 42vw, 560px);
+  }
+
+  .hero__watch {
+    width: clamp(230px, 24vw, 330px);
+    transform: translateY(clamp(20px, 3vw, 40px));
+  }
+
+  .hero__variant {
+    inset-inline-start: auto;
+    inset-inline-end: 4%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__watch,
+  .hero__cue-link .icon {
+    animation: none;
+  }
+}

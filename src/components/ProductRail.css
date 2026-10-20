@@ -1,0 +1,45 @@
+.rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(226px, 68vw);
+  gap: clamp(0.8rem, 2vw, 1.2rem);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  padding-bottom: 0.9rem;
+  scrollbar-width: thin;
+}
+
+.rail::-webkit-scrollbar {
+  height: 6px;
+}
+
+.rail::-webkit-scrollbar-track {
+  background: var(--line);
+  border-radius: var(--r-pill);
+}
+
+.rail::-webkit-scrollbar-thumb {
+  background: var(--sand-deep);
+  border-radius: var(--r-pill);
+}
+
+.rail__item {
+  scroll-snap-align: start;
+}
+
+.rail__item > * {
+  height: 100%;
+}
+
+@media (min-width: 640px) {
+  .rail {
+    grid-auto-columns: minmax(240px, 40vw);
+  }
+}
+
+@media (min-width: 1024px) {
+  .rail {
+    grid-auto-columns: 23%;
+  }
+}

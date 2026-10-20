@@ -1,0 +1,22 @@
+{
+  "name": "zamanyar",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "فروشگاه ساعت زمان‌یار — premium Persian watch store",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource-variable/vazirmatn": "^5.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "vite": "^8.3.4"
+  }
+}

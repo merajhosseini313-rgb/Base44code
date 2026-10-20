@@ -1,0 +1,21 @@
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--clay);
+  font-size: var(--step-micro);
+}
+
+.rating__stars {
+  display: inline-flex;
+  gap: 1px;
+}
+
+.rating__value {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.rating__count {
+  color: var(--ink-faint);
+}

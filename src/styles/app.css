@@ -1,0 +1,21 @@
+main {
+  display: block;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  inset-inline-start: 0.5rem;
+  z-index: 70;
+  padding: 0.6rem 1rem;
+  border-radius: var(--r-pill);
+  background: var(--ink);
+  color: var(--cream-soft);
+  font-size: 0.85rem;
+  transform: translateY(-160%);
+  transition: transform 0.25s ease;
+}
+
+.skip-link:focus-visible {
+  transform: none;
+}

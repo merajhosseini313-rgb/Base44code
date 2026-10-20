@@ -1,0 +1,133 @@
+.search {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.search.is-open {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.search__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(45, 38, 33, 0.35);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.search.is-open .search__scrim {
+  opacity: 1;
+}
+
+.search__panel {
+  position: relative;
+  background: var(--shell);
+  border-bottom: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-102%);
+  transition: transform 0.35s cubic-bezier(0.22, 0.7, 0.2, 1);
+}
+
+.search.is-open .search__panel {
+  transform: none;
+}
+
+.search__inner {
+  padding-block: 1.4rem 1.8rem;
+}
+
+.search__field {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.85rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  background: var(--cream-soft);
+  color: var(--ink-faint);
+}
+
+.search__input {
+  flex: 1;
+  border: 0;
+  background: none;
+  outline: none;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.search__input::placeholder {
+  color: var(--ink-faint);
+}
+
+.search__close {
+  display: inline-flex;
+  color: var(--ink-soft);
+}
+
+.search__results {
+  margin-top: 1.1rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.search__item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--r-md);
+  transition: background-color 0.2s ease;
+}
+
+.search__item:hover {
+  background: var(--cream-deep);
+}
+
+.search__thumb {
+  width: 42px;
+  height: 58px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+
+.search__thumb svg {
+  width: 100%;
+  height: 100%;
+}
+
+.search__meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  margin-inline-end: auto;
+}
+
+.search__name {
+  font-size: 0.94rem;
+}
+
+.search__brand {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  color: var(--ink-faint);
+}
+
+.search__price {
+  font-size: 0.86rem;
+  color: var(--clay);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.search__hint,
+.search__empty {
+  margin-top: 1rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}

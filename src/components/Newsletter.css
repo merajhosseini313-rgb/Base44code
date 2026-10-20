@@ -1,0 +1,104 @@
+.newsletter__panel {
+  display: grid;
+  gap: clamp(1.4rem, 4vw, 3rem);
+  padding: clamp(1.7rem, 5vw, 3.4rem);
+  border-radius: clamp(28px, 5vw, 56px);
+  background:
+    radial-gradient(90% 90% at 10% 0%, rgba(255, 253, 249, 0.75), rgba(255, 253, 249, 0) 60%),
+    linear-gradient(150deg, #e7d5c0 0%, #d6bda1 100%);
+  box-shadow: var(--shadow-md);
+}
+
+.newsletter__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.newsletter__copy .lead {
+  max-width: 46ch;
+  color: var(--ink-soft);
+}
+
+.newsletter__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-self: center;
+  width: 100%;
+}
+
+.newsletter__field {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.5rem 0.5rem 1.1rem;
+  border-radius: var(--r-pill);
+  background: rgba(255, 252, 247, 0.92);
+  border: 1px solid rgba(45, 38, 33, 0.14);
+  color: var(--ink-faint);
+}
+
+.newsletter__field input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: none;
+  font-size: 0.95rem;
+  color: var(--ink);
+  padding-block: 0.5rem;
+}
+
+.newsletter__field input::placeholder {
+  color: var(--ink-faint);
+}
+
+.newsletter__hint,
+.newsletter__error {
+  font-size: var(--step-micro);
+  padding-inline: 1.1rem;
+}
+
+.newsletter__hint {
+  color: var(--ink-soft);
+}
+
+.newsletter__error {
+  color: #8d3d24;
+}
+
+.newsletter__done {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  align-self: center;
+  padding: 1rem 1.3rem;
+  border-radius: var(--r-md);
+  background: rgba(255, 252, 247, 0.92);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.9;
+}
+
+.newsletter__done-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--r-pill);
+  background: var(--clay);
+  color: var(--shell);
+}
+
+@media (min-width: 900px) {
+  .newsletter__panel {
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+  }
+
+  .newsletter__field {
+    padding-inline-start: 1.3rem;
+  }
+}
